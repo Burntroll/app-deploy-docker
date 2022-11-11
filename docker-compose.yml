@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  apache:
+    image: httpd:alpine3.16
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - /data/appX:/usr/local/apache2/htdocs
+    networks:
+      - my-server
+
+networks:
+  my-server:
